@@ -16,9 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@rankle/backend/rankle-core": ["libs/backend/rankle-core/src/index.ts"],
-      "@rankle/frontend/utils/api-client": [
-        "libs/frontend/utils/api-client/src/index.ts"
-      ]
+      "@rankle/frontend/utils/api-client": ["libs/frontend/utils/api-client/src/index.ts"],
+      "@rankle/shared/data-models": ["libs/shared/data-models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

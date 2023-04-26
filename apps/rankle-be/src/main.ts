@@ -9,7 +9,7 @@ app.use(
   cors({
     origin: ['http://127.0.0.1:4200', 'http://localhost:4200'],
     credentials: false,
-  })
+  }),
 );
 
 app.use((req, _res, next) => {
@@ -24,7 +24,7 @@ app.use(
   trpcExpress.createExpressMiddleware({
     router: appRouter,
     createContext,
-  })
+  }),
 );
 
 app.get('/', (req, res) => {
