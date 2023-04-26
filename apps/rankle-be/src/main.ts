@@ -1,16 +1,33 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
+import { appRouter, createContext } from '@rankle/backend/rankle-core';
+import * as trpcExpress from '@trpc/server/adapters/express';
+import cors from 'cors';
 import express from 'express';
-import * as path from 'path';
 
 const app = express();
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(
+  cors({
+    origin: ['http://127.0.0.1:4200', 'http://localhost:4200'],
+    credentials: false,
+  })
+);
 
-app.get('/api', (req, res) => {
+app.use((req, _res, next) => {
+  // middleware, logger
+  console.log('⬅️ ', req.method, req.path, req.body ?? req.query);
+
+  next();
+});
+
+app.use(
+  '/api',
+  trpcExpress.createExpressMiddleware({
+    router: appRouter,
+    createContext,
+  })
+);
+
+app.get('/', (req, res) => {
   res.send({ message: 'Welcome to rankle-be!' });
 });
 
