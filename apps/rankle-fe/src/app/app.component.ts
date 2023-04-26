@@ -1,14 +1,13 @@
-import { Component } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { NxWelcomeComponent } from "./nx-welcome.component";
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ApiClientService } from '@rankle/frontend/utils/api-client';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: "rankle-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  imports: [RouterModule, CommonModule],
+  providers: [ApiClientService],
+  selector: 'rankle-root',
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = "rankle-fe";
-}
+export class AppComponent {}

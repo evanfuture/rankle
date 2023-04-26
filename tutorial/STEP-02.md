@@ -1,0 +1,6 @@
+- Use the Nx Console to `generate` an `@nrwl/angular:library` named `api-client` in the folder `frontend/utils`. Turn off tests (for now)
+- Cleanup api-client, rename some files.
+- Implement trpc client, set the test-header that we defined in the rankle-core's context.
+- clean up the app/rankle-fe to simplify.
+- Make a basic call to the api-client on init, and see how it all links together.
+- add script to run fe

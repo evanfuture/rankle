@@ -1,0 +1,15 @@
+{
+  "vsicons.presets.angular": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.validate": ["css", "scss"],
+  "css.validate": false,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#D32F2F",
+    "activityBar.foreground": "#ffffff"
+  },
+  "eslint.validate": ["json"]
+}

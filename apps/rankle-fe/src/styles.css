@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* @import './lib/custom'; */
+
+@import 'tailwindcss/utilities';
+
+body {
+  @apply bg-slate-800 font-content text-white;
+}

@@ -37,7 +37,7 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/tailwind.config.js"]
   },
   "generators": {
     "@nrwl/angular:application": {
