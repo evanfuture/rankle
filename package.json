@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:be": "nx run rankle-be:serve"
+    "dev:be": "nx run rankle-be:serve",
+    "dev:fe": "nx run rankle-fe:serve"
   },
   "private": true,
   "dependencies": {
