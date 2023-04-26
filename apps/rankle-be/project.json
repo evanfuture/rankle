@@ -1,0 +1,64 @@
+{
+  "name": "rankle-be",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rankle-be/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/rankle-be",
+        "main": "apps/rankle-be/src/main.ts",
+        "tsConfig": "apps/rankle-be/tsconfig.app.json",
+        "assets": ["apps/rankle-be/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/rankle-be/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rankle-be:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rankle-be:build:development"
+        },
+        "production": {
+          "buildTarget": "rankle-be:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rankle-be/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/rankle-be/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

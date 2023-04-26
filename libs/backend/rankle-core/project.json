@@ -1,0 +1,26 @@
+{
+  "name": "backend-rankle-core",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/rankle-core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/rankle-core",
+        "main": "libs/backend/rankle-core/src/index.ts",
+        "tsConfig": "libs/backend/rankle-core/tsconfig.lib.json",
+        "assets": ["libs/backend/rankle-core/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/rankle-core/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
