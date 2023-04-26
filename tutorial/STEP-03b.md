@@ -1,0 +1,3 @@
+- Add trpc query to get data
+- add trpc mutation with zod validations to "post" data
+- update FE interface to support these.
